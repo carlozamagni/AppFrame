@@ -14,7 +14,7 @@ namespace Mvc4BaseApp
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //I don't want the HomeController urls to be shown as "{domain}/Home/Action".
-            //This also fixes an issue with the mvc bootstrap's extension methods: the terms "Home" and "Index" are ignored when the navigation bar links are build.
+            //This also fixes an issue with the mvc bootstrap's extension methods: the terms "Home" and "Index" are ignored when the navigation bar links are built.
             routes.MapRoute("HomeActions","{action}", new {controller = "Home", action = "Index"});
 
             routes.MapRoute(
