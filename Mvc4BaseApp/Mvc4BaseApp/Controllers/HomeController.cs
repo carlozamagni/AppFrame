@@ -15,6 +15,14 @@ namespace Mvc4BaseApp.Controllers
             return View();
         }
 
+        //
+        // GET: /Home/jssamples
+
+        public ActionResult JsSamples()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
