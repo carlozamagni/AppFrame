@@ -8,6 +8,7 @@
         <title>@ViewBag.Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="@Styles.Url("~/content/css")" rel="stylesheet"/>
+        @Scripts.Render("~/js")
         @RenderSection("head", required: false)
         @Html.Partial("_html5shiv")
         @* favicons and touch icons go here *@
@@ -39,7 +40,7 @@
                 <p>&copy; Company @System.DateTime.Now.ToString("yyyy")</p>
             </footer> 
         </div>
-         @Scripts.Render("~/js")
+         @*@Scripts.Render("~/js")*@
          @RenderSection("Scripts", required: false)
     </body>
 </html>

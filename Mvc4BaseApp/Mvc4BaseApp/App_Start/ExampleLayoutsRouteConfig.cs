@@ -16,7 +16,7 @@ namespace BootstrapMvcSample
         {
             routes.MapNavigationRoute<HomeController>("Automatic Scaffolding", c => c.Index());
 
-            routes.MapNavigationRoute<HomeController>("js libs samples", c => c.JsSamples());
+            routes.MapNavigationRoute<HomeController>("js experiments", c => c.JsSamples());
 
             routes.MapNavigationRoute<ExampleLayoutsController>("Example Layouts", c => c.Starter())
                   .AddChildRoute<ExampleLayoutsController>("Marketing", c => c.Marketing())
