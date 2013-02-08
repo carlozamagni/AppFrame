@@ -18,7 +18,7 @@ namespace BootstrapSupport
                 "~/Scripts/jquery.toolbar.js"
                 ));
 
-            bundles.Add(new StyleBundle("~/content/css").Include(
+            bundles.Add(new StyleBundle("~/btcontent/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/body.css",
                 "~/Content/bootstrap-responsive.css",
