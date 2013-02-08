@@ -2,7 +2,29 @@
     ViewBag.Title = "Contact";
 }
 
-<hgroup class="title">
+
+<div class="container-fluid">
+    <div class="row-fluid">
+
+        <div class="span3">
+            <a href="#" class="thumbnail">
+                <img src="@ViewBag.PhotoUrl" alt="contact photo" />
+            </a>
+
+        </div>
+        <!--/span-->
+        <div class="span9">
+            <ul>
+                <li><span class="label label-info">email</span><span><a href="mailto:Support@example.com">Support@example.com</a></span></li>
+                
+                <li><span class="label">url</span><span><a href="https://github.com/carlozamagni/Mvc4AppFoundation">look at the code on github</a></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+@*<hgroup class="title">
     <h1>@ViewBag.Title.</h1>
     <h2>@ViewBag.Message</h2>
 </hgroup>
@@ -47,4 +69,4 @@
         One Microsoft Way<br />
         Redmond, WA 98052-6399
     </p>
-</section>
+</section>*@

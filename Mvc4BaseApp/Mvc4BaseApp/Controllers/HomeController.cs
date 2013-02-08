@@ -26,13 +26,14 @@ namespace Mvc4BaseApp.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
-
+            
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            ViewBag.PhotoUrl = " ";
 
             return View();
         }

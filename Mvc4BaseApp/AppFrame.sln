@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4BaseApp", "Mvc4BaseApp\Mvc4BaseApp.csproj", "{4D74DA74-79B0-469A-A241-A492C8569EA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame", "Mvc4BaseApp\AppFrame.csproj", "{4D74DA74-79B0-469A-A241-A492C8569EA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
