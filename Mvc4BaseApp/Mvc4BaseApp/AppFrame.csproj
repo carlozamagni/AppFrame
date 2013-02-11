@@ -216,6 +216,7 @@
     <Content Include="Content\images\icon-cog-shadow.png" />
     <Content Include="Content\images\icon-cog-small.png" />
     <Content Include="Content\images\icon-cog.png" />
+    <Content Include="Content\images\profile-icon.png" />
     <Content Include="Content\jquery.toolbars.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
