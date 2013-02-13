@@ -11,5 +11,5 @@ A simple skeleton for new web apps based on .NET MVC technology featuring:
 - [ ] webApi with configured IoC
 - [ ] already configured mobile templating
 
-preview url: [http://appframe.apphb.com/]
+preview url: http://appframe.apphb.com/
 
