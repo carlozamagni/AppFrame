@@ -3,6 +3,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel;
+using System.Web.Http.Dispatcher;
+using Castle.Windsor;
+using System.Net.Http;
+using System.Web.Http.Controllers;
 
 namespace Mvc4BaseApp.Installer
 {
@@ -29,6 +33,40 @@ namespace Mvc4BaseApp.Installer
                                                       requestContext.HttpContext.Request.Path));
             }
             return (IController)kernel.Resolve(controllerType);
+        }
+    }
+
+    public class WindsorCompositionRoot : IHttpControllerActivator
+    {
+        private readonly IWindsorContainer container;
+
+        public WindsorCompositionRoot(IWindsorContainer container)
+        {
+            this.container = container;
+        }
+
+        public IHttpController Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+        {
+            var controller = (IHttpController)this.container.Resolve(controllerType);
+
+            request.RegisterForDispose(new Release(() => this.container.Release(controller)));
+
+            return controller;
+        }
+
+        private class Release : IDisposable
+        {
+            private readonly Action release;
+
+            public Release(Action release)
+            {
+                this.release = release;
+            }
+
+            public void Dispose()
+            {
+                this.release();
+            }
         }
     }
 }

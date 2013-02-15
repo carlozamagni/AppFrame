@@ -9,6 +9,7 @@ using System.Web.Routing;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Mvc4BaseApp.Installer;
+using System.Web.Http.Dispatcher;
 
 namespace Mvc4BaseApp
 {
@@ -22,17 +23,23 @@ namespace Mvc4BaseApp
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            
+            StartIocContainer();
+            
+            
+            WebApiConfig.Register(GlobalConfiguration.Configuration, _container);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            StartIocContainer();
+            
+            
 
             BootstrapSupport.BootstrapBundleConfig.RegisterBundles(System.Web.Optimization.BundleTable.Bundles);
             BootstrapMvcSample.ExampleLayoutsRouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            BundleMobileConfig.RegisterBundles(BundleTable.Bundles);
         }
 
         protected void Application_End()
@@ -45,6 +52,9 @@ namespace Mvc4BaseApp
         {
             _container = new WindsorContainer()
                 .Install(FromAssembly.This());
+
+            
+
             var controllerFactory = new WindsorControllerFactory(_container.Kernel);
             ControllerBuilder.Current.SetControllerFactory(controllerFactory);
         }
